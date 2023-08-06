@@ -1,0 +1,187 @@
+$breakpoints: (
+    tablet_max-width: 1024px,
+    phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 10vh;
+}
+
+body {
+    background-image: url("/../public/pics/user-login-bg.jpeg");
+    background-size: cover;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ysabeau Office", sans-serif;
+}
+
+
+.success-msg {
+    color: #FEFEFE;
+    //border: 1px solid red;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 35%;
+    text-align: center;
+
+    @include tablet {
+        width: 90%;
+    }
+}
+
+
+section {
+    //border: 1px solid red;
+    border-radius: 5px;
+    background-color: rgba(254, 254, 254, 0.38);
+    width: 35%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 10px 2px rgba(128, 128, 128, 0.49);
+
+    @include tablet {
+        width: 90%;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        color: rgba(2, 2, 2, 0.79);
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.3em;
+
+        a {
+            text-decoration: none;
+            font-size: .90em;
+            color: #1d48c4;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    form {
+        //border: 1px solid yellow;
+        width: 90%;
+        margin: 30px auto auto auto;
+        background-color: #FEFEFE;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+
+        .error {
+            text-align: center;
+            margin-bottom: 25px;
+            color: red;
+            //font-size: 1em;
+        }
+
+        .emailForm, .pwdForm {
+            //border: 1px solid blue;
+            position: relative;
+
+            input {
+                height: 40px;
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 55px;
+                border: none;
+                font-size: 1em;
+                outline: none;
+                font-family: "Ysabeau Office", sans-serif;
+            }
+
+            i {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                margin-left: 15px;
+                font-size: 1.5em;
+            }
+
+            hr {
+                border: none;
+                border-top: .1px solid rgba(183, 183, 183, 0.33);
+                margin-top: 10px;
+            }
+        }
+
+        .pwdForm {
+            margin-top: 40px;
+        }
+
+        .forgottenPwd {
+            text-align: right;
+            margin-top: 30px;
+            padding-right: 10px;
+            font-size: 1.05em;
+
+            a {
+                text-decoration: none;
+                color: #545454;
+
+                &:hover {
+                    color: #15ab9c;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .btn {
+            //border: 1px solid;
+            width: 45%;
+            margin: 30px auto auto auto;
+
+            @include mobile {
+                width: 60%;
+            }
+
+            button {
+                width: 100%;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                text-transform: uppercase;
+                font-weight: bold;
+                border: none;
+                background-color: #5CD2C6;
+                border-radius: 50px;
+                cursor: pointer;
+                color: #FEFEFE;
+                font-size: 1.05em;
+                font-family: "Ysabeau Office", sans-serif;
+
+                &:hover {
+                    background-color: #03bbac;
+                }
+            }
+        }
+    }
+}

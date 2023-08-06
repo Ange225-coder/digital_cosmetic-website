@@ -1,0 +1,211 @@
+$breakpoints: (
+    tablet_max-width: 1024px,
+    phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Ysabeau Office", sans-serif;
+}
+
+
+nav {
+    //border: 1px solid red;
+    background-color: rgba(92, 210, 198, 0.33);
+
+    .nav-content {
+        //border: 1px solid blue;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet {
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 2px;
+            padding-right: 5px;
+        }
+
+        .logo {
+            width: 6%;
+            //border: 1px solid yellow;
+
+            @include tablet {
+                width: 60px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .logout {
+
+            a {
+                text-decoration: none;
+                border: 2px solid;
+                padding: 4px 35px;
+                display: block;
+                font-size: 1.05em;
+                border-radius: 5px;
+                color: orangered;
+                transition-delay: .3s;
+                transition: all .3s;
+
+                &:hover {
+                    border-color: red;
+                    background-color: red;
+                    color: #FEFEFE;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+
+
+
+section {
+    //border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(194, 194, 194, 0.41);
+    height: 100%;
+
+
+    .main-content {
+        //border: 1px solid blue;
+        text-align: center;
+        //height: 500px;
+        width: 450px;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        background-color: #FEFEFE;
+        border-radius: 5px;
+        box-shadow: 2px 2px 15px 2px rgba(128, 128, 128, 0.38);
+
+        @include mobile {
+            width:  95%;
+        }
+
+        .logo-block {
+            //border: 1px solid;
+            margin-top: -20px;
+        }
+
+        .img {
+            //border: 1px dashed;
+            width: 80px;
+            margin: auto;
+
+            img {
+                width: 80px;
+            }
+        }
+
+        h1 {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            padding-left: 5px;
+
+            span {
+                color: #40b249;
+            }
+        }
+
+        .text-block {
+            //border: 1px solid;
+
+            h2 {
+                font-weight: 400;
+            }
+
+            p {
+                margin-top: 25px;
+                font-size: 1.09em;
+            }
+        }
+
+        form {
+            //border: 1px solid;
+            width: 80%;
+            margin: 30px auto;
+
+            .error {
+                color: red;
+                margin-bottom: 20px;
+            }
+
+
+            .input-block--grid {
+                //border: 1px solid yellow;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+
+                input, button {
+                    width: 100%;
+                    box-sizing: border-box;
+                    height: 40px;
+                    font-family: "Ysabeau Office", sans-serif;
+                }
+
+                input {
+                    font-size: .96em;
+                    padding-left: 15px;
+                    outline: none;
+                    border-radius: 3px;
+                    border: 1px solid rgba(128, 128, 128, 0.38);
+                }
+
+                button {
+                    border: none;
+                    border-radius: 3px;
+                    background-color: #5CD2C6;
+                    color: #FEFEFE;
+                    cursor: pointer;
+                    font-size: 1em;
+                    transition-delay: .4s;
+                    transition: all .3s;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: #1fc2b4;
+                        transition: all .4s;
+                    }
+                }
+            }
+        }
+
+        .notice {
+            margin-top: 50px;
+            //border: 1px solid;
+            color: red;
+        }
+    }
+}

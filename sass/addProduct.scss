@@ -1,0 +1,236 @@
+$breakpoints: (
+      tablet_max-width: 1024px,
+      phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("/../public/pics/ad-addP.jfif");
+    //background-size: cover;
+    //backdrop-filter: blur(3px);
+    font-family: "Ysabeau Office", sans-serif;
+}
+
+section {
+    //border: 1px solid red;
+    width: 60%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    h1 {
+        color: #FEFEFE;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.3em;
+    }
+
+    .form-block {
+        background-color: rgba(254, 254, 254, 0.47);
+        //border: 1px solid yellow;
+        height: 100%;
+        //margin: auto;
+        padding-top: 45px;
+        padding-bottom: 20px;
+        border-radius: 5px;
+
+        .error {
+            color: red;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        hr {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.21);
+        }
+
+        .--input {
+            //border: 1px solid blue;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+
+            label, input {
+                display: block;
+            }
+
+            input {
+                height: 35px;
+                width: 75%;
+                outline: none;
+                border: 1px solid rgba(107, 106, 106, 0.3);
+                padding-left: 15px;
+                font-size: 1.06em;
+                color: #646464;
+                border-radius: 3px;
+                transition-delay: .2s;
+                transition: all .5s ease-in-out;
+                font-family: "Ysabeau Office", sans-serif;
+
+                &:focus {
+                    transform: translateY(-3px);
+                    transition: all .5s ease-in-out;
+                    box-shadow: 1px 1px 5px rgba(129, 129, 129, 0.56);
+                }
+            }
+
+            label {
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+        }
+
+        .product_description {
+            display: flex;
+            justify-content: space-between;
+            //border: 1px solid blue;
+            width: 90%;
+            margin: auto;
+
+            label, textarea {
+                display: block;
+            }
+
+            label {
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+            textarea {
+                height: 100px;
+                width: 75%;
+                padding-left: 15px;
+                padding-top: 5px;
+                font-size: 1.1em;
+                outline: none;
+                color: #646464;
+                border-radius: 3px;
+                transition-delay: .2s;
+                transition: all .5s ease-in-out;
+                border: 1px solid rgba(107, 106, 106, 0.3);
+                font-family: "Ysabeau Office", sans-serif;
+
+                &:focus {
+                    transform: translateY(-3px);
+                    transition: all .5s ease-in-out;
+                    box-shadow: 1px 1px 10px grey;
+                }
+            }
+        }
+
+        .btn-radio {
+            //border: 1px solid purple;
+            width: 60%;
+            margin: auto;
+            display: flex;
+
+            div {
+                //border: 1px solid;
+                display: flex;
+                //justify-content: space-between;
+                align-items: center;
+                width: 30%;
+                margin: auto;
+
+                label, input {
+                    display: block;
+                }
+
+                input {
+                    order: -1;
+                    margin-right: 15px;
+                    width: 18px;
+                    height: 18px;
+                }
+
+                label {
+                    font-size: 1.1em;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .product_img {
+            //border: 1px solid blue;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label, input {
+                display: block;
+            }
+
+            label {
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            input {
+                //border: 1px solid red;
+                width: 75%;
+                padding-left: 15px;
+                font-size: 1.05em;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .btn {
+            //border: 1px solid;
+            width: 25%;
+            margin: 45px auto;
+
+            button {
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 1.1em;
+                height: 45px;
+                border: none;
+                border-radius: 5px;
+                background-color: #5CD2C6;
+                color: #FEFEFE;
+                cursor: pointer;
+                transition-delay: .3s;
+                transition: all .4s ease-in-out;
+                font-family: "Ysabeau Office", sans-serif;
+
+                &:hover {
+                    background-color: #23a29b;
+                    transition: all .4s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+$breakpoints: (
+    tablet_max-width: 1024px,
+    phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(149, 232, 220, 0.13);
+    font-family: "Ysabeau Office", sans-serif;
+}
+
+
+section {
+    //border: 1px solid red;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    //width: 80%;
+
+    h1 {
+        margin-bottom:  50px;
+        font-size: 2em;
+        color: #001019;
+    }
+
+    .person {
+        //border: 1px solid;
+        font-size: 8em;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        background-color: rgba(183, 183, 183, 0.2);
+        color: grey;
+    }
+
+    h2 {
+
+        @include mobile {
+            font-size: 1.3em;
+        }
+    }
+
+    form {
+        //border: 1px solid blue;
+        margin-top: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .error {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: red;
+        }
+
+        .emailForm {
+            //border: 1px solid red;
+
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                height: 40px;
+                font-size: 1em;
+                padding-left: 10px;
+                border: none;
+                border-bottom: 2px solid rgba(128, 128, 128, 0.47);
+                outline: none;
+                font-family: "Ysabeau Office", sans-serif;
+                font-weight: bold;
+
+                &:hover {
+                    border-bottom-color: #15af4e;
+                    transition: all .5s ease;
+                }
+            }
+        }
+
+        .btn {
+            //border: 1px solid yellow;
+            margin-top: 40px;
+
+            button {
+                width: 100%;
+                height: 45px;
+                font-size: 1.05em;
+                text-transform: uppercase;
+                border: none;
+                background-color: #5CD2C6;
+                color: #FEFEFE;
+                border-radius: 50px;
+                cursor: pointer;
+                font-family: "Ysabeau Office", sans-serif;
+
+                &:hover {
+                    background-color: #0E0E0E;
+                    transition: all .5s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,275 @@
+$breakpoints: (
+    tablet_max-width: 1024px,
+    phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Ysabeau Office", sans-serif;
+    background-color: rgba(194, 194, 194, 0.29);
+    //border: 1px solid yellow;
+    padding-bottom: 40px;
+    //height: 200vh;
+}
+
+nav {
+    //border: 1px solid red;
+    background-color: rgba(92, 210, 198, 0.33);
+
+    .nav-content {
+        //border: 1px solid blue;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet {
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 2px;
+            padding-right: 5px;
+        }
+
+        .logo {
+            width: 6%;
+            //border: 1px solid yellow;
+
+            @include tablet {
+                width: 60px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .logout {
+
+            a {
+                text-decoration: none;
+                border: 2px solid;
+                padding: 4px 35px;
+                display: block;
+                font-size: 1.05em;
+                border-radius: 5px;
+                color: orangered;
+                transition-delay: .3s;
+                transition: all .3s;
+
+                &:hover {
+                    border-color: red;
+                    background-color: red;
+                    color: #FEFEFE;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
+
+
+section {
+    //border: 1px solid red;
+    height: 100vh;
+    width: 80%;
+    margin: 25px auto auto auto;
+    background-color: #FEFEFE;
+    padding-top: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.45);
+    border-radius: 5px;
+
+    @include tablet {
+        width: 90%;
+        height: 100%;
+    }
+
+    h1 {
+        margin-left: 15px;
+        margin-bottom: 5px;
+
+        @include tablet {
+            margin-left: 0;
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 1.3em;
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid rgba(176, 176, 176, 0.37);
+    }
+
+    .secondLine {
+        width: 90%;
+        margin: 25px auto;
+    }
+
+    .product {
+        //border: 1px solid blue;
+        margin-top: 20px;
+
+        @include tablet {
+            //height: 110vh;
+        }
+
+        .img {
+            //border: 1px dashed;
+            width: 20%;
+            margin: auto;
+
+            @include tablet {
+                width: 45%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .order-details {
+            //border: 1px solid red;//rgba(182, 182, 182, 0.38);
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            margin: 15px auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 2px 1px rgba(182, 182, 182, 0.38);
+
+            @include tablet {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .user-info {
+                //border: 1px solid red;
+                width: 45%;
+
+                @include tablet {
+                    width: 95%;
+                    margin: auto;
+                }
+
+                p {
+                    padding-left: 15px;
+
+                    @include tablet {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            &__middle {
+                border-left: 1px solid rgba(168, 168, 168, 0.35);
+                height: 25vh;
+                margin: auto;
+
+                @include tablet {
+                    display: none;
+                }
+            }
+
+            &__otherMiddleLine {
+                //border: 1px solid red;
+                display: none;
+
+                @include tablet {
+                    display: block;
+                    border: none;
+                    border-top: 1px solid rgba(176, 176, 176, 0.37);;
+                    width: 80%;
+                    margin: 15px auto;
+                }
+            }
+
+            .order-info {
+                //bordeR: 1px solid blue;
+                width: 45%;
+
+                @include tablet {
+                    width: 95%;
+                    margin: auto;
+                }
+
+                p {
+                    text-align: right;
+                    padding-right: 15px;
+
+                    @include tablet {
+                        padding-right: 0;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .order-info, .user-info {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+
+                p {
+                    //border: 1px solid;
+                    //padding-left: 10px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    font-size: 1.1em;
+
+                    @include mobile {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+
+    .link {
+        text-align: center;
+        margin-top: 30px;
+        //border: 1px solid;
+
+        @include tablet {
+            padding-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #5CD2C6;
+            color: #FEFEFE;
+            padding: 7px 25px;
+            border-radius: 4px;
+            font-size: 1.1em;
+
+            &:hover {
+                background-color: #12b0a5;
+            }
+        }
+    }
+}

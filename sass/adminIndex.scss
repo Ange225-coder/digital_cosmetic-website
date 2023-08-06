@@ -1,0 +1,131 @@
+$breakpoints: (
+    tablet_max-width: 1024px,
+    phone_max-width: 480px,
+);
+
+//manager for screen tablets
+@mixin tablet {
+    @media screen and (max-width: map-get($breakpoints, tablet_max-width)) {
+        @content;
+    }
+}
+
+
+//manager for mobile tablets
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, phone_max-width)) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+
+}
+
+body {
+    background-image: url("/../public/pics/ad-i.jfif");
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    font-family: "Ysabeau Office", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile  {
+
+    }
+}
+
+
+section {
+    //border: 1px solid blue;
+    width: 100%;
+
+    .main-content {
+        //border: 1px solid red;
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: rgba(254, 254, 254, 0.3);
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 50px;
+
+            @include tablet {
+                font-size: 2.5em;
+            }
+
+            @include mobile {
+                font-size: 2em;
+            }
+        }
+
+        &__links {
+            //border: 1px solid yellow;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            width: 419px;
+            margin: auto;
+
+            @include mobile {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            a {
+                display: block;
+                //border: 1px solid;
+                text-decoration: none;
+                width: 200px;
+                margin: auto;
+                padding-top: 14px;
+                padding-bottom:14px;
+                text-transform: uppercase;
+                font-size: .85em;
+                color: #FEFEFE;
+                letter-spacing: 1.2px;
+            }
+
+            .registration {
+                background-color: #5CD2C6;
+                border: 2px solid #5CD2C6;
+
+                &:hover {
+                    background-color: rgba(10, 197, 178, 0.84);
+                    border-color: rgba(10, 197, 178, 0.84);
+                }
+            }
+
+            .login {
+                border: 2px solid;
+
+                &:hover {
+                    background-color: #FEFEFE;
+                    color: #001019;
+                    border-color: #FEFEFE;
+                }
+            }
+
+            .registration, .login {
+                transition-delay: .4s;
+                transition: all .4s ease-in-out;
+
+                &:hover {
+                    transition: all .4s ease-in-out;
+                }
+            }
+        }
+    }
+}

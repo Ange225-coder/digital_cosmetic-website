@@ -1,0 +1,219 @@
+
+
+nav {
+  //border: 1px solid red;
+  padding: 15px;
+  background-color: #FEFEFE;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(154, 154, 154, 0.3);
+
+  .nav-content {
+    //border: 1px solid blue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+
+
+    .logo {
+      width: 5.5%;
+
+      @include tablet {
+        width: 13%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+
+    .user-block {
+      //border: 1px solid red;
+      position: relative;
+      //width: 30%;
+
+      details {
+        //border: 1px solid;
+        position: absolute;
+        right: 120px;
+        top: -3px;
+        width: 250%;
+        cursor: pointer;
+
+        @include tablet {
+          top: -13px;
+          right: -2px;
+          width: 1000%;
+        }
+
+        a {
+          display: block;
+          text-decoration: none;
+        }
+
+        summary {
+          list-style: none;
+          text-align: center;
+          font-size: 1.05em;
+          background-color: rgba(183, 186, 195, 0.6);
+          padding-top: 9px;
+          padding-bottom: 9px;
+          border-radius : 5px;
+
+          @include tablet {
+            background-color: transparent;
+          }
+
+          &:hover {
+            color: #0F969C;
+          }
+
+          .user {
+
+            @include tablet {
+              display: none;
+            }
+          }
+
+        }
+
+        span {
+          margin-left: 3.5px;
+          margin-right: 10px;
+        }
+
+        div {
+          border-radius: 5px;
+          padding-bottom: 8px;
+          display: grid;
+          grid-template-columns: 1fr;
+          background-color: #FEFEFE;
+          z-index: 9999;
+          width: 100%;
+          box-shadow: 1px 1px 10px 1px rgba(154, 154, 154, 0.3);
+
+          @include tablet {
+            width: 100%;
+            position: absolute;
+            top: 71.5px;
+          }
+
+          .--center {
+            text-align: center;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            color: red;
+            width: 80%;
+            margin: 10px auto 5px auto;
+
+            &:hover {
+              background-color: rgba(255, 0, 0, 0.22);
+            }
+          }
+
+          .--black {
+            color: #001019;
+            //border: 1px solid;
+            padding-left: 7px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            &:hover {
+              background-color: #E4E4E4;
+
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+
+          .--borderR {
+            border-radius: 4px 4px 0 0;
+          }
+
+
+          span {
+            margin-left: 10px;
+          }
+        }
+
+        hr {
+          border: none;
+          border-top: .1px solid #E4E4E4;
+        }
+
+        #menuHamburger {
+          display: none;
+          font-size: 1.6em;
+
+          @include tablet {
+            display: block;
+          }
+        }
+      }
+
+      .basket {
+        //width: 100%;
+        span {
+          margin-left: 8px;
+
+          @include tablet {
+            display: none;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          font-size: 1.05em;
+          color: #001019;
+
+          &:hover {
+            color: #0F969C;
+          }
+        }
+
+        i {
+          font-size: 22px;
+
+          @include tablet {
+            font-size: 20px;
+          }
+        }
+
+        sup {
+          //border: 1px solid;
+          margin-bottom: 30px;
+          border-radius: 50%;
+          padding-left: 2px;
+          padding-right: 2px;
+          background-color: red;
+          border: none;
+          color: #FEFEFE;
+          font-weight: bold;
+          position: absolute;
+          top: -6px;
+          left: 13px;
+
+          @include tablet  {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+
+    h1 {
+
+      a {
+        text-decoration: none;
+        color: #001019;
+      }
+    }
+  }
+}
