@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+    php-env:
+      depends_on:
+        - longrich_db
+      build: .
+      volumes:
+        - ./longrich:/var/www/html
+        - ./apache-config/apache2.conf:/etc/apache2/apache2.conf
+      ports:
+        - "80:80"
+
+
+
+    longrich_db:
+      image: mysql:latest
+      restart: always
+      volumes:
+        - longrich_db_data:/var/lib/mysql
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: long_rich_pass
+
+
+    phpmyadmin:
+      image: phpmyadmin:latest
+      depends_on:
+        - longrich_db
+      restart: always
+      ports:
+        - "9002:80"
+      environment:
+        - PMA_ARBITRARY=1
+
+
+volumes:
+  longrich_db_data: {}

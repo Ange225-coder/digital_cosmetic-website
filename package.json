@@ -1,0 +1,102 @@
+{
+  "name": "longrich_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "404_style": "sass --watch longrich/sass/404.scss:longrich/public/css/404.css --style compressed",
+      "404_prefix": "postcss longrich/public/css/404.css --use autoprefixer -d longrich/public/css-prefixed",
+
+      "putProductInCart_style" : "sass --watch longrich/sass/putProductInCart.scss:longrich/public/css/putProductInCart.css --style compressed",
+      "putProductInCart_prefix" : "postcss longrich/public/css/putProductInCart.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "cart_style" : "sass --watch longrich/sass/cart.scss:longrich/public/css/cart.css --style compressed",
+      "cart_prefix" : "postcss longrich/public/css/cart.css --use autoprefixer -d longrich/public/css-prefixed",
+
+      "userSettings_style" : "sass --watch longrich/sass/usersSetting.scss:longrich/public/css/usersSettings.css --style compressed",
+      "userSettings_prefix" : "postcss longrich/public/css/usersSettings.css --use autoprefixer -d longrich/public/css-prefixed",
+
+      "orderProcessed_style" : "sass --watch longrich/sass/orderProcessed.scss:longrich/public/css/orderProcessed.css --style compressed",
+      "orderProcessed_prefix" : "postcss longrich/public/css/orderProcessed.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "index_style" : "sass --watch longrich/sass/index_style.scss:longrich/public/css/index_style.css --style compressed",
+      "index_prefix" : "postcss longrich/public/css/index_style.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "user-login_style" : "sass --watch longrich/sass/user-login.scss:longrich/public/css/user-login.css --style compressed",
+      "user-login_prefix" : "postcss longrich/public/css/user-login.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "forgottenEmailCheckingForm_style" : "sass --watch longrich/sass/emailChecking.scss:longrich/public/css/emailChecking.css --style compressed",
+      "forgottenEmailCheckingForm_prefix" : "postcss longrich/public/css/emailChecking.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "resetPwdForm_style" : "sass --watch longrich/sass/resetPwdForm.scss:longrich/public/css/resetPwdForm.css --style compressed",
+      "resetPwdForm_prefix" : "postcss longrich/public/css/resetPwdForm.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "user-registration_style" : "sass --watch longrich/sass/user-registration.scss:longrich/public/css/user-registration.css --style compressed",
+      "user-registration_prefix" : "postcss longrich/public/css/user-registration.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "search-bar_style" : "sass --watch longrich/sass/search-bar.scss:longrich/public/css/search-bar.css --style compressed",
+      "search-bar_prefix" : "postcss longrich/public/css/search-bar.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "contact_style" : "sass --watch longrich/sass/contact.scss:longrich/public/css/contact.css --style compressed",
+      "contact_prefix" : "postcss longrich/public/css/contact.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "products-sorting_style" : "sass --watch longrich/sass/products-sorting.scss:longrich/public/css/products-sorting.css --style compressed",
+      "products-sorting_prefix" : "postcss longrich/public/css/products-sorting.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "user-delAccountForm_style" : "sass --watch longrich/sass/delAccountForm.scss:longrich/public/css/delAccountForm.css --style compressed",
+      "user-delAccountForm_prefix" : "postcss longrich/public/css/delAccountForm.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+
+
+
+      "adminHomePage_style" : "sass --watch longrich/sass/adminHomePage.scss:longrich/public/css/adminHomePage.css --style compressed",
+      "adminHomePage_prefix" : "postcss longrich/public/css/adminHomePage.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-index_style" : "sass --watch longrich/sass/adminIndex.scss:longrich/public/css/adminIndex.css --style compressed",
+      "admin-index_prefix" : "postcss longrich/public/css/adminIndex.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-addProduct_style" : "sass --watch longrich/sass/addProduct.scss:longrich/public/css/addProduct.css --style compressed",
+      "admin-addProduct_prefix" : "postcss longrich/public/css/addProduct.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-productList_style" : "sass --watch longrich/sass/productList.scss:longrich/public/css/productList.css --style compressed",
+      "admin-productList_prefix" : "postcss longrich/public/css/productList.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-productModification_style" : "sass --watch longrich/sass/productModification.scss:longrich/public/css/productModification.css --style compressed",
+      "admin-productModification_prefix" : "postcss longrich/public/css/productModification.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-registration_style" : "sass --watch longrich/sass/admin-registration.scss:longrich/public/css/admin-registration.css --style compressed",
+      "admin-registration_prefix" : "postcss longrich/public/css/admin-registration.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-login_style" : "sass --watch longrich/sass/admin-login.scss:longrich/public/css/admin-login.css --style compressed",
+      "admin-login_prefix" : "postcss longrich/public/css/admin-login.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-productInProcess_style" : "sass --watch longrich/sass/productInProcess.scss:longrich/public/css/productInProcess.css --style compressed",
+      "admin-productInProcess_prefix" : "postcss longrich/public/css/productInProcess.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-delProduct_style" : "sass --watch longrich/sass/delProduct.scss:longrich/public/css/delProduct.css --style compressed",
+      "admin-delProduct_prefix" : "postcss longrich/public/css/delProduct.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-orderConfirmation_style" : "sass --watch longrich/sass/orderConfirmation.scss:longrich/public/css/orderConfirmation.css --style compressed",
+      "admin-orderConfirmation_prefix" : "postcss longrich/public/css/orderConfirmation.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-delMessage_style" : "sass --watch longrich/sass/delMessage.scss:longrich/public/css/delMessage.css --style compressed",
+      "admin-delMessage_prefix" : "postcss longrich/public/css/delMessage.css --use autoprefixer -d longrich/public/css-prefixed",
+
+      "admin-delAllMessage_style" : "sass --watch longrich/sass/delAllMessage.scss:longrich/public/css/delAllMessage.css --style compressed",
+      "admin-delAllMessage_prefix" : "postcss longrich/public/css/delAllMessage.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-checkingOrder_style" : "sass --watch longrich/sass/checkingOrder.scss:longrich/public/css/checkingOrder.css --style compressed",
+      "admin-checkingOrder_prefix" : "postcss longrich/public/css/checkingOrder.css --use autoprefixer -d longrich/public/css-prefixed/",
+
+      "admin-suggestion_style" : "sass --watch longrich/sass/message.scss:longrich/public/css/message.css --style compressed",
+      "admin-suggestion_prefix" : "postcss longrich/public/css/message.css --use autoprefixer -d longrich/public/css-prefixed/"
+
+  },
+  "author": "Yannick Bile (owner)",
+  "license": "ISC",
+  "browserslist": [
+      "last 4 versions"
+  ]
+}
+
+
